@@ -1,0 +1,35 @@
+{% extends 'dapp/base.html' %}
+{% load static %}
+{% block body_block %}
+
+    <link rel="stylesheet" href="{% static 'formstyle.css' %}">
+
+    <div class="main-container">
+
+        <div class="form-container">
+            
+            <div class="title">Login Here</div>
+        
+            <form method="POST" action="{% url 'dapp:user_login' %}" class="form">
+                {% csrf_token %}
+                <div class="username">
+                    <input type="text" name="username" placeholder="Username">
+                </div>
+
+                <div class="password">
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+
+                <!-- <div class="forgot-password">
+                    <a href="#">Forgot Password?</a>
+                </div> -->
+                <input class="login-btn" type="submit" name="" value="Login">
+            </form>
+        </div>
+        
+    </div>
+    <footer class="footer"> 
+        <div class="footer__copyright">&copy; 2021 Organisation Name</div>
+        <div class="footer__signature">Placeholder for contact details</div>
+    </footer>
+{% endblock %}

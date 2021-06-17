@@ -1,0 +1,31 @@
+{% extends "dapp/base.html" %}
+{% load static %}
+
+{% block body_block %}
+
+<link rel="stylesheet" href="{% static 'reg-formstyle.css' %}">
+
+    
+    <div class="form-container">
+        <div class="jumbotron">
+            {% if registered %}
+                <h1>Thank you for registering!</h1>
+            {% else %}
+            
+                <div class="title">Register Here</div>
+                <!-- <h2>For Individual Users </h2> -->
+                <form enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    <div class="user">
+                        {{ user_form.as_p }}
+                    </div>
+                    <!-- {{ profile_form.as_p}} -->
+                    <div class="contact">{{profile_form.contact.label_tag}} {{profile_form.contact}}</div>
+                    <div class="profile-pic"><strong>Profile Picture:</strong> {{profile_form.profile_pic}}</div>
+                    <input type="submit" name="" value="Register" class="signup-btn">
+                </form>
+
+            {% endif %}
+        </div>
+  </div>
+{% endblock %}

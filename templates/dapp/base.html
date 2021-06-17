@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Base</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <script src="https://kit.fontawesome.com/9b4bba5eef.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default navbar-static-top" >
+                <ul class="nav navbar-nav" >
+                    <li><a class="navbar-brand" href="{% url 'index' %}" style="color: #48897c;">HOME</a></li>
+                    <li><a class="navbar-link" href="{% url 'admin:index' %}" style="color: #48897c;">Admin</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}" style="color: #48897c;">Logout</a></li>
+                    {% else %}
+                    <li><a class="navbar-link" href="{% url 'dapp:register_user' %}" style="color: #48897c;">Register as User</a></li>
+                    <li><a class="navbar-link" href="{% url 'dapp:register_org' %}" style="color: #48897c;">Register as Org</a></li>
+                    <li><a class="navbar-link" href="{% url 'dapp:user_login' %}" style="color: #48897c;">Login</a></li>
+                    {% endif %}
+                </ul>
+        </nav>
+    
+        {% block body_block %}
+        {% endblock %}
+    </body>
+</html>
+

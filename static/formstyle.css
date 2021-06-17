@@ -1,0 +1,70 @@
+
+* {
+    font-family: 'Patua One', cursive;
+}
+
+
+.main-container {
+    display: grid;
+    /* grid-template-columns: 1200px 200px; */
+    grid-template-rows: 1fr 50px;
+    grid-template-areas: 
+    "form-container"
+    "footer";
+    height: 100vh;
+    /* width: 100vw; */
+
+}
+
+.form-container {
+    margin: 50px auto;
+    width: 400px;
+    height: 500px;
+    padding: 60px;
+    background-color: #E1E6E6;
+    box-shadow: 10px 10px 6px #2e5a51;
+    border-radius: 15px;
+    
+}
+
+.title {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 35px;
+  
+}
+
+.form {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.form input {
+    font-size: 18px;
+    padding: 10px 20px 10px 5px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.username, .password {
+    display: block;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 2);
+    padding: 15px;
+    margin: 10px 0;
+}
+
+input.login-btn {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    font-size: 18px;
+    border-radius: 30px;
+    background-color: green;
+    color: white;
+}
+input.login-btn:hover {
+    background-color: greenyellow;
+    cursor: pointer;
+}
